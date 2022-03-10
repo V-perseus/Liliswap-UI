@@ -1,0 +1,13 @@
+[Unit]
+Description=Lilith Swap Production
+After=network.target
+[Service]
+Type=simple
+ExecStart=/usr/bin/sudo /home/ubuntu/.nvm/versions/node/v17.1.0/bin/npm run start --prefix /mnt/Sites/lilithswap.com/default
+WorkingDirectory=/mnt/Sites/lilithswap.com/default
+StandardOutput=syslog
+StandardError=syslog
+Restart=on-failure
+User=root
+[Install]
+WantedBy=multi-user.target
